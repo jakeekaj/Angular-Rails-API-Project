@@ -1,6 +1,7 @@
 module Api
   module V1
     class ReviewsController < ApplicationController
+    skip_before_filter :verify_authenticity_token
     before_action :set_movie_and_review, only: [:show, :edit, :update, :destroy]
 
 
@@ -22,7 +23,7 @@ module Api
 
     if @review.save
       @movie.save
-      render json: @review, status: :created, location: @review, serializer: ReviewsSerializer
+      render json: @review, status: :created, serializer: ReviewsSerializer
     else
       render json: @review.errors, status: :unprocessable_entity
     end

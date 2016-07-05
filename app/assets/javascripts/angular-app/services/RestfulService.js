@@ -18,6 +18,12 @@ function RestfulService($http){
     return $http.get('http://localhost:3000/api/v1/movies/'+ movieId);
   };
 
+  this.addReview = function(movieId, review){
+    return $http.post('http://localhost:3000/api/v1/movies/'+ movieId + '/reviews',review);
+  }
+
+
+
 
 
 

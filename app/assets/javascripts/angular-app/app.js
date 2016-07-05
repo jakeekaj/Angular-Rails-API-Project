@@ -22,6 +22,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
        url: 'movies/:id',
        templateUrl: 'home/movie.html',
        controller: 'MovieController as ctrl'
+     })
+     .state('home.review', {
+       url: 'movies/:id/review/new',
+       templateUrl: 'home/review.html',
+       controller: 'ReviewController as ctrl'
      });
   $urlRouterProvider.otherwise('/');
 });

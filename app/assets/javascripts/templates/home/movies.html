@@ -1,7 +1,15 @@
 <h1>Movies</h1>
+<p>Filter by:</p>
+
+ <span ng-class="{'active': active === true}" ng-click="active = !active">Title</span> |
+ <span ng-click="active = !active">Reviews</span>
+
+<p>Search by TITLE: <input ng-model='ctrl.search.title'></p>
 <ul>
-  <li ng-repeat="movie in ctrl.movies">
-    <a ui-sref='home.movie({id: movie.id})'><h3>{{ movie.title }}</h3></a><button ng-click='ctrl.delete(movie.id)'>Instant Delete!</button>
+  <li ng-repeat="movie in ctrl.movies | filter: ctrl.search">
+    <h3>Title:<a ui-sref='home.movie({id: movie.id})'>{{ movie.title }}</a><span> <button ng-click='ctrl.delete(movie.id)'>X</button></span></h3>
+
+    <h4>Plot:</h4>
     <p>
       {{ movie.plot }}
     </p>

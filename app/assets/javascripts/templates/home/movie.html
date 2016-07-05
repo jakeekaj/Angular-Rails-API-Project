@@ -1,11 +1,13 @@
 <h1>Movie Details</h1>
-  <h3>{{ ctrl.movie.title }}</h3><button ng-click='ctrl.delete(ctrl.movie.id)'>Instant Delete!</button>
-  <p>
-    {{ ctrl.movie.plot }}
-  </p>
+  <h3>Title: {{ ctrl.movie.title }}</h3><button ng-click='ctrl.delete(ctrl.movie.id)'>Instant Delete!</button>
+  <h4>Plot:</h4>
+    <p>{{ ctrl.movie.plot }}</p>
 
+<h4>Reviews:</h4>
   <ul>
     <li ng-repeat="review in ctrl.movie.reviews">
-      <h5>{{ review.body }}</h5>
+      {{ review.body }}
     </li>
   </ul>
+
+ <a ui-sref='home.review({id: ctrl.movie.id})'><button>Add a Review</button></a>

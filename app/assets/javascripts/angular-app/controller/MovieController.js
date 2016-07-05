@@ -13,4 +13,5 @@ function MovieController(RestfulService, $stateParams, $location ) {
       });
     };
 
+
 };
