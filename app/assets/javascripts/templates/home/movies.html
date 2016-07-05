@@ -1,7 +1,7 @@
 <h1>Movies</h1>
 <ul>
   <li ng-repeat="movie in ctrl.movies">
-    <h3>{{ movie.title }}</h3><button ng-click='ctrl.delete(movie.id)'>Instant Delete!</button>
+    <a ui-sref='home.movie({id: movie.id})'><h3>{{ movie.title }}</h3></a><button ng-click='ctrl.delete(movie.id)'>Instant Delete!</button>
     <p>
       {{ movie.plot }}
     </p>

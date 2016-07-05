@@ -18,7 +18,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        templateUrl: 'home/movies.html',
        controller: 'MoviesController as ctrl'
      })
-     .state('home.movies.id', {
+     .state('home.movie', {
        url: 'movies/:id',
        templateUrl: 'home/movie.html',
        controller: 'MovieController as ctrl'

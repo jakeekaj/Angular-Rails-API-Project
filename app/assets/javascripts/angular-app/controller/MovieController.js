@@ -1,10 +1,10 @@
 app.controller('MovieController', MovieController);
 
-function MovieController(RestfulService) {
+function MovieController(RestfulService, $stateParams, $location ) {
   var ctrl = this;
 
-  ctrl.movie = RestfulService.getMovies().success(function(data){
-      ctrl.movies = data;
+  ctrl.movie = RestfulService.getMovie($stateParams.id).success(function(data){
+      ctrl.movie = data;
     });
 
   ctrl.delete = function(movieId){

@@ -1,5 +1,11 @@
-<h1>Movie Details Page</h1>
-  <h3>{{ movie.title }}</h3><button ng-click='ctrl.delete(movie.id)'>Instant Delete!</button>
+<h1>Movie Details</h1>
+  <h3>{{ ctrl.movie.title }}</h3><button ng-click='ctrl.delete(ctrl.movie.id)'>Instant Delete!</button>
   <p>
-    {{ movie.plot }}
+    {{ ctrl.movie.plot }}
   </p>
+
+  <ul>
+    <li ng-repeat="review in ctrl.movie.reviews">
+      <h5>{{ review.body }}</h5>
+    </li>
+  </ul>
