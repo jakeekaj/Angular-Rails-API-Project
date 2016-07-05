@@ -11,12 +11,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
      .state('home.new', {
        url: 'new',
        templateUrl: 'home/new.html',
-       controller: 'MoviesController as ctrl'
+       controller: 'NewMovieController as ctrl'
      })
      .state('home.movies', {
        url: 'movies',
        templateUrl: 'home/movies.html',
        controller: 'MoviesController as ctrl'
+     })
+     .state('home.movies.id', {
+       url: 'movies/:id',
+       templateUrl: 'home/movie.html',
+       controller: 'MovieController as ctrl'
      });
   $urlRouterProvider.otherwise('/');
 });

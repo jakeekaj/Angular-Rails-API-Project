@@ -6,4 +6,11 @@ function MoviesController(RestfulService) {
       ctrl.movies = data;
     });
 
+  ctrl.delete = function(movieId){
+    RestfulService.deleteMovie(movieId);
+    RestfulService.getMovies().success(function(data){
+        ctrl.movies = data;
+      });
+  };
+
 };

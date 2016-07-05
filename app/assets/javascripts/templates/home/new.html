@@ -1,8 +1,8 @@
 <h1>Add Movie</h1>
-<form>
+<form name="form" ng-submit="ctrl.submit()">
  <label for='title'>Title</label>
- <input name='title'>
+ <input name='title' ng-model='ctrl.title'>
  <label for='plot'>Plot</label>
- <input name='plot'>
+ <input name='plot' type='textarea' ng-model='ctrl.plot'>
  <input type='submit' value='Add Movie'>
 </form>
