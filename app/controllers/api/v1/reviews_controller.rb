@@ -15,8 +15,7 @@ module Api
     render json: @review, serializer: ReviewsSerializer
   end
 
-  # POST /reviews
-  # POST /reviews.json
+
   def create
     @movie = Movie.find(params[:movie_id])
     @review = @movie.reviews.create(review_params)
@@ -29,8 +28,7 @@ module Api
     end
   end
 
-  # PATCH/PUT /reviews/1
-  # PATCH/PUT /reviews/1.json
+
   def update
     @review.update(review_params)
     @movie.save
@@ -41,8 +39,7 @@ module Api
     end
   end
 
-  # DELETE /reviews/1
-  # DELETE /reviews/1.json
+
   def destroy
     @review.destroy
     @movie.save
