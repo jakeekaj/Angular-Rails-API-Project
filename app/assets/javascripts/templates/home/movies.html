@@ -1,12 +1,13 @@
 <h1>Movies</h1>
-<p>Filter by:</p>
+<p>Order by:</p>
 
- <span ng-class="{'active': active === true}" ng-click="active = !active">Title</span> |
- <span ng-click="active = !active">Reviews</span>
-
+ <button ng-class="{'active': ctrl.active1 === true }" ng-click="ctrl.activeButton1(); ctrl.sort_data_by('title')">Title</button> |
+ <button ng-class="{'active': ctrl.active2 === true }" ng-click="ctrl.activeButton2(); ctrl.sort_data_by('reviews')">Reviews</button>
+ <span ng-if="ctrl.reverse">z-a</span>
+ <span ng-if="!ctrl.reverse">a-z</span>
 <p>Search by TITLE: <input ng-model='ctrl.search.title'></p>
 <ul>
-  <li ng-repeat="movie in ctrl.movies | filter: ctrl.search">
+  <li ng-repeat="movie in ctrl.movies | filter: ctrl.search | orderBy: ctrl.sort_on : ctrl.reverse ">
     <h3>Title:<a ui-sref='home.movie({id: movie.id})'>{{ movie.title }}</a><span> <button ng-click='ctrl.delete(movie.id)'>X</button></span></h3>
 
     <h4>Plot:</h4>
