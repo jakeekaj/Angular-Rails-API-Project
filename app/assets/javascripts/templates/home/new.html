@@ -1,8 +1,25 @@
 <h1>Add Movie</h1>
 <form name="form" ng-submit="ctrl.submit()">
  <label for='title'>Title</label>
- <input name='title' ng-model='ctrl.title'>
+ <input name='title' required="required" ng-minlength=3 ng-model='ctrl.title'>
+   <div ng-if="form.title.$touched">
+     <div ng-if="form.title.$error.required">
+              Title is required!
+     </div>
+   <div ng-if="form.title.$error.minlength">
+            Title must be at least 3 characters
+     </div>
+  </div>
  <label for='plot'>Plot</label>
- <input name='plot' type='textarea' ng-model='ctrl.plot'>
+ <input name='plot' required="required" ng-minlength=10  ng-model='ctrl.plot'>
+   <div ng-if="form.plot.$touched">
+     <div ng-if="form.plot.$error.required">
+            Plot is required!
+     </div>
+
+   <div ng-if="form.plot.$error.minlength">
+          Plot must be at least 10 characters
+     </div>
+  </div>
  <input type='submit' value='Add Movie'>
 </form>
