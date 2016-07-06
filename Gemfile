@@ -17,7 +17,8 @@ gem 'active_model_serializers'
 gem 'responders'
 gem 'bower-rails'
 gem 'angular-rails-templates'
-gem "bootstrap-sass"
+gem 'bootstrap-sass'
+gem 'seed_dump'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
