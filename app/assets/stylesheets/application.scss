@@ -13,11 +13,10 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 
- .active {
-   background-color: yellow;
- }
 
  label, input {
      display: block;
