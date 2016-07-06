@@ -1,8 +1,8 @@
 <div class='page-header'><h1>Movie List</h1></div>
-<p>Order by:</p>
+<p>Order by: (double-click to reverse order)</p>
 
- <button class="btn btn-primary" ng-class="{'active': ctrl.active1 === true }" ng-click="ctrl.activeButton1(); ctrl.sort_data_by('title')">Title</button> |
- <button class="btn btn-primary" ng-class="{'active': ctrl.active2 === true }" ng-click="ctrl.activeButton2(); ctrl.sort_data_by('reviews')">Reviews</button>
+ <button class="btn btn-primary"  ng-click="ctrl.sort_data_by('title')">Title</button> |
+ <button class="btn btn-primary"  ng-click="ctrl.sort_data_by('reviews')">Reviews</button>
  <span ng-if="ctrl.reverse">z-a</span>
  <span ng-if="!ctrl.reverse">a-z</span>
 <p>Search by TITLE: <input ng-model='ctrl.search.title'></p>

@@ -7,17 +7,23 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Movie Reviews - Demo App</a>
+          <a class="navbar-brand" href="#">Movies Database - Demo App</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a ui-sref='home' ui-sref-active='active'>Home</a></li>
+
             <li><a ui-sref='home.new' ui-sref-active='active'>New Movie</a></li>
             <li><a ui-sref='home.movies' ui-sref-active='active'>Movie List</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
 <div class="container">
-<div ui-view></div>
+ <div ui-view>
+  <div class="jumbotron" ng-hide="hideMain">
+  <h2>Home Page</h2>
+  <p>content goes in here</p>
+  </div>
+ </div>
 </div>
