@@ -1,6 +1,16 @@
-<h1>Add Review</h1>
+<div class='page-header'><h1>Add Review</h1></div>
 <form name="form" ng-submit="ctrl.submit()">
+  <fieldset class="form-group">
  <label for='body'>Body</label>
- <input name='body' ng-model='ctrl.body'>
+ <input name='body' class="form-control" type='text' required="required" ng-minlength=4 ng-model='ctrl.body'>
+ <div ng-if="form.body.$touched">
+   <div ng-if="form.body.$error.required">
+            Body is required!
+   </div>
+ <div ng-if="form.body.$error.minlength">
+          Body must be at least 4 characters
+   </div>
+</div>
+</fieldset>
  <input type='submit' value='Add Review'>
 </form>
