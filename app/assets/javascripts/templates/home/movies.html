@@ -6,9 +6,10 @@
  <span ng-if="ctrl.reverse">z-a</span>
  <span ng-if="!ctrl.reverse">a-z</span>
 <p>Search by TITLE: <input ng-model='ctrl.search.title'></p>
-<ul>
-  <li ng-repeat="movie in ctrl.movies | filter: ctrl.search | orderBy: ctrl.sort_on : ctrl.reverse ">
-    <h3>Title:<a ui-sref='home.movie({id: movie.id})'>{{ movie.title }}</a><span> <button ng-click='ctrl.delete(movie.id)'>X</button></span></h3>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="movie in ctrl.movies | filter: ctrl.search | orderBy: ctrl.sort_on : ctrl.reverse ">
+    <h4>Title:<a ui-sref='home.movie({id: movie.id})'> {{ movie.title }}</a>
+      <span class="glyphicon glyphicon-remove" style="cursor:pointer" ng-click='ctrl.delete(movie.id)'></span></h4>
 
     <h4>Plot:</h4>
     <p>

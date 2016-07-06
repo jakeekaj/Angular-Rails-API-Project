@@ -4,8 +4,8 @@
     <p>{{ ctrl.movie.plot }}</p>
 
 <h4>Reviews:</h4>
-  <ul>
-    <li ng-repeat="review in ctrl.movie.reviews">
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="review in ctrl.movie.reviews">
       {{ review.body }}
     </li>
   </ul>
